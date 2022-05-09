@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.todo-container{
+    border-radius: 15px;
+    border-color: rgb(8, 9, 9);
+    width:600px;
+    margin:50px auto 0;
+    background-color:rgb(226, 239, 235); ;
+}
+
+
+.todo-container .add-task{
+    background-color: rgb(122, 168, 188);
+    
+    padding: 15px;
+    position: relative;
+}
+
+.todo-container .add-task input {
+   display: inline-block;
+   width: 90%;
+   padding:5px 2px ;
+   border: none;
+}
+.todo-container .add-task .add {
+    font-size: 18px;
+    border-radius: 20px;
+    border-color:rgb(122, 168, 188);
+}
+
+.todo-container .task-content{
+    
+    padding: 15px;
+}
+.todo-container .task-content .no-tasks-message{
+    font-size: 15px;
+    text-align: center;
+    color: rgb(88, 88, 88);
+}
+
+.todo-container .task-content span{
+    display: block;
+    padding: 10px;
+    background-color: rgb(122, 168, 188);
+
+    
+}
+.todo-container .task-content span:not(:last-child){
+    margin-bottom: 10px;
+} 
+
+input[type='checkbox'] {
+    visibility: hidden;
+}
+
+
+.todo-container .task-content .task-box .del {
+    float: right;
+    background-color: #E91E63;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.todo-container .task-content .task-box.finished{
+    text-decoration: line-through;
+}
+
+
+.task-state{
+    overflow:hidden; 
+    margin: 10px auto;
+    width: 100%;
+    font-size:17px;
+
+}
+.task-state .count {
+    width: 50%;
+    float: left;
+    padding:10px;
+
+}
+.task-state .completed {
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding:10px;
+}
+
+.task-state .count span,
+.task-state .completed span {
+  color: #FFF;
+  padding: 1px 5px;
+  font-size: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.task-state .count span {
+    background-color: #E91E63;
+  }
+  .task-state .completed span {
+    background-color:#E91E63;
+  }
+
+.task-state .sel , .clr , .complete{
+    font-size: 15px;
+    border-radius: 20px;
+    border-color: aliceblue;
+    margin-left: 85%;
+    margin-bottom: 10px;
+   
+}  
+
+    
+   
+
+
+
+
+
