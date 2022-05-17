@@ -1,0 +1,28 @@
+img{
+    margin-left: 70px;
+    height: 310px;
+}
+
+p{
+    text-align: center;
+    color: #1c86ba;
+    margin-bottom: 0px;
+    font-style: bold;
+    font-size: 50px;
+}
+
+.buttons{
+
+    float: right;
+    margin-top: 100px;
+    margin-right: 120px;
+}
+
+app-button {
+    margin-left: 20px;
+    
+    border-style: solid;
+    border-radius: 20px;
+    border-color: blanchedalmond;
+}
+

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card">
+        <div class="text-center">
+            <h1>Sign Up</h1>
+           
+        </div>
+        <form #f="ngForm" (ngSubmit)="signUp(f)">
+            <div class="txt-box">
+                <label for="exampleInputUsrName1" class="form-label">Name</label>
+                <input ngModel name="name"  #name="ngModel" type="text" class="form-control" id="exampleInputUsrName1" required />
+            </div>
+            <div class="alert" *ngIf="name.invalid && name.touched"> *Name is required </div>
+           
+            <div class="txt-box">
+                <label for="exampleInputUsrName1" class="form-label">User Name</label>
+                <input ngModel username="username"  #username="ngModel" type="text" class="form-control" id="exampleInputUsrName1" required />
+            </div>
+            <div class="alert" *ngIf="username.invalid && username.touched"> *userName is required </div>
+            <div class="txt-box">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input ngModel name="email" #email="ngModel" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" email required/>
+            </div>
+            <div class="alert" *ngIf="email.touched && email.errors?.['required']"> *Email is required </div>
+            <div class="alert" *ngIf="email.touched && email.errors?.['email']"> *Not a valid email syntax </div>
+            <div class="txt-box">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input  ngModel name="password" #pass="ngModel"   type="password" class="form-control" id="exampleInputPassword1" required minlength="6" />
+            </div>
+            <div class="alert" *ngIf="pass.touched && pass.errors?.['required'] "> *password is required </div>
+            <div class="alert" *ngIf="pass.touched && pass.errors?.['minlength']"> *Length should be greate than 5 </div>
+            
+            <div class="txt-box">
+                <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
+                <input  ngModel name="confirmpassword"  #confirmpass="ngModel"  type="password" class="form-control" id="exampleInputConfirmPassword1" required />
+            </div>
+            
+            <div class="alert" *ngIf="confirmpass.touched && pass.value != confirmpass.value"> *password doesn't match </div>
+
+            <button [disabled]="f.invalid || pass.value != confirmpass.value "  type="submit" class="btn">Create Account</button>
+            <a routerLink="/login/newUser">Already registered? click to login</a>
+        </form>
+        
+    </div>
+</div>

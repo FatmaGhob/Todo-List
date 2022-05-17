@@ -1,0 +1,32 @@
+<div class="task-view-page">
+    <div class="user_info">
+        <img src="assets/todoImage.png">
+        <p  class="user-name">xxxxxx</p>   
+    </div>
+
+    <div class="todo-container">
+        <header>
+            <h1>Things To Do</h1>
+        </header>
+        <div class="form-content">
+            <input type="text" class="inputTask" placeholder="Enter your new task ....." [(ngModel)]="inputTask">
+            <app-button color="#1c86ba" text="Add" class="addBtn" (btnClick)="onAddTask()"></app-button>
+        </div>
+        <div *ngFor="let todo of todoTask; let i = index" class="todo {{ (todo.completed ? 'done' : '') }}">
+            <input type="checkbox" name={{todo.content}} id={{i}} class="chkbox"
+                (change)="saveCheckedTask(i); this.isBoxSelected = true" *ngIf="selectBtnClicked">
+            <div class="content">{{todo.content}}</div>
+            <app-button color="#a53333" text="X" class="deleteBtn" (btnClick)="deleteTask(todo)"></app-button>
+            <app-button color="#a53333" text="edit" class="editBtn" (btnClick)="editTask(todo)"></app-button>
+        </div>
+
+        <div class="xtraBtn">
+            <app-button color="#1c86ba" text="select" class="selectBtn" (btnClick)="selectBtnClicked = true ">
+            </app-button>
+
+            <app-button color="#1c86ba" text="complete" class="completeBtn" *ngIf="isBoxSelected"
+                (btnClick)="makeTaskCompleted()"></app-button>
+
+        </div>
+    </div>
+</div>

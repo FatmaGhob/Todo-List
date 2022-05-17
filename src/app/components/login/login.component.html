@@ -1,0 +1,26 @@
+<div class="container">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                   
+                </div>
+                <form #f="ngForm" (ngSubmit)="logIn(f)">
+                    <div class="txt-box">
+                        <label for="exampleInputEmail1" class="form-label" >Email</label>
+                        <input ngModel name="email" #email="ngModel" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required email/>
+                    </div>
+                    <div class="alert" *ngIf="email.touched && email.errors?.['required']"> *Email is required </div>
+                    <div class="alert" *ngIf="email.touched && email.errors?.['email']"> *Not a valid email syntax </div>
+            
+                    <div class="txt-box">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input  ngModel name="pass" #pass="ngModel" type="password" class="form-control" id="exampleInputPassword1" required />
+                    </div>
+                    <div class="alert" *ngIf="pass.touched && pass.errors?.['required'] "> *password is required </div>
+            
+
+                    <button [disabled]="f.invalid" type="submit" class="btn">Login</button>
+                    <a routerLink="/registeration">New user ? click to register</a>
+                </form>
+            </div>
+        </div>

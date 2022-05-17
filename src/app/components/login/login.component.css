@@ -1,0 +1,59 @@
+.card{
+
+    
+    border-radius: 5px;
+    border-color: rgb(132, 168, 192);
+    border-style: solid;
+    width:300px;
+    padding: 2px;
+    position: absolute;
+    margin-top:80px ;
+    margin-left: 280px;
+    background: rgb(87, 108, 136);
+    
+    
+} 
+.text-center{
+    text-align: center;
+    color: rgb(230, 230, 230);
+}
+
+h1{
+    margin-bottom: 10px;
+}
+
+
+.form-label{
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(230, 230, 230);
+    font-size: 14px;
+}
+.form-control{
+   margin-left: 50px;
+   display: block;
+   margin-top: 2px;
+   margin-bottom: 2px;
+   width: 200px;
+}
+.btn{
+    margin-top: 20px;
+    margin-left: 125px;
+    margin-bottom: 10px;
+   
+}
+a{
+    font-size: 7px ;
+    margin-left: 115px;
+    color: beige;
+}
+
+.alert{
+    font-size: 9px;
+    color: rgb(73, 29, 29);
+    margin-left: 50px;
+}
+
+
+
