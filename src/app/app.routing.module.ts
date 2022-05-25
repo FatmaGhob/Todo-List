@@ -10,7 +10,7 @@ import { ViewtaskComponent } from './components/viewtask/viewtask.component';
 const routes: Routes = [
   {path : 'home', component:HomeComponent},
   {path : '', redirectTo : '/home', pathMatch : 'full'}  ,
-  {path:'login/:name', component:LoginComponent},
+  {path:'login', component:LoginComponent},
   {path:'registeration', component:RegisterationComponent}, 
   {path:'task', component: TodosComponent },{ 
   path: 'task/view/:id', component: ViewtaskComponent }];

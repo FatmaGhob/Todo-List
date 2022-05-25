@@ -80,9 +80,9 @@ export class TodosComponent implements OnInit {
   // }
 
   deleteTask(dtaskId: Todo) {
-    console.log(dtaskId.id);
+    console.log(dtaskId.taskId);
     //this.todoTask = this.todoTask.filter((e, i) => i != id);
-    this.taskService.deleteTask(dtaskId.id!).subscribe({
+    this.taskService.deleteTask(dtaskId.taskId!).subscribe({
       next: (response: void) => {
         this.getTasks();
       },
@@ -91,6 +91,17 @@ export class TodosComponent implements OnInit {
       },
     });
     this.getTasks();
+  }
+
+  clear(){
+    this.taskService.clearTask().subscribe({
+      next: (response: void) => {
+        this.getTasks();
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
   }
 
   // make the selected task completed or viceverse
@@ -109,7 +120,7 @@ export class TodosComponent implements OnInit {
     checkedTasks.forEach((e) => {
       e.completed = true;
 
-      this.taskService.updateTask(e.id!, e.completed, e.isSelected!).subscribe({
+      this.taskService.updateTask(e.taskId!, e).subscribe({
         next: () => {},
         error: (error: HttpErrorResponse) => {
           alert(error.message);
@@ -125,7 +136,7 @@ export class TodosComponent implements OnInit {
   }
 
   editTask(task: Todo){
-    this.router.navigate(['/task/view',task.id]);
+    this.router.navigate(['/task/view',task.taskId]);
   }
 
 }
